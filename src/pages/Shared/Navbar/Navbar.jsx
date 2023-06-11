@@ -8,7 +8,7 @@ import tippy from "tippy.js";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
-//   const [cart] = useCart();
+  //   const [cart] = useCart();
 
   const handleLogOut = () => {
     logOut()
@@ -21,15 +21,15 @@ const NavBar = () => {
       });
   };
 
-   const buttonRef = useRef(null);
+  const buttonRef = useRef(null);
 
-   useEffect(() => {
-     if (user) {
-       tippy(buttonRef.current, {
-         content: user.displayName,
-       });
-     }
-   }, [user]);
+  useEffect(() => {
+    if (user) {
+      tippy(buttonRef.current, {
+        content: user.displayName,
+      });
+    }
+  }, [user]);
 
   const navOptions = (
     <>
@@ -76,7 +76,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="navbar  bg-opacity-30 max-w-screen-xl">
+      <div className="navbar bg-opacity-30 max-w-screen-xl">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -102,17 +102,15 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <h1 className="font-semibold text-zinc-200 text-3xl">
+          <h1 className="font-semibold text-zinc-200 text-3xl ">
             {" "}
-            <Link to="/">Elite Sports </Link>
+            <Link to="/">EliteSports </Link>
           </h1>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
-        <div className="navbar-end">
-          <Link className="btn">Get started</Link>
-        </div>
+        
       </div>
     </>
   );

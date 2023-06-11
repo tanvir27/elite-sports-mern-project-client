@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
         path: "instructors",
         element: (
           <PrivateRoute>
-           <Instructors></Instructors>
+            <Instructors></Instructors>
           </PrivateRoute>
         ),
       },
@@ -29,11 +29,15 @@ export const router = createBrowserRouter([
         path: "login",
         element: <Login></Login>,
       },
+
       {
         path: "signup",
         element: <SignUp></SignUp>,
       },
-  
+      {
+        path: "classes",
+        element: <></>,
+      },
     ],
   },
 ]);

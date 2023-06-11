@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid text-center grid-cols-1 md:grid-cols-4 gap-4">
           {/* Column 1 */}
           <div className="text-center">
-            <h1 className="text-2xl font-semibold mb-4">SportsPlus Academy</h1>
+            <h1 className="text-2xl font-semibold mb-4">Elite Sports </h1>
             <div className="flex flex-col items-center ">
               <p className="text-sm mb-2">
                 Stay updated with our latest news and offers!
@@ -35,7 +35,7 @@ const Footer = () => {
 
             <p className="mb-2">Phone: +8801776858436</p>
 
-            <p className="mb-2"> Email: sportsplus@gmail.com</p>
+            <p className="mb-2"> Email: elitesports@gmail.com</p>
           </div>
 
           <div>
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         <div className="text-center text-white text-sm mt-4">
           <p className="font-semibold">
-            &copy; SportsPlus Academy 2023. All rights reserved.
+            &copy; Elite Sports Academy 2023. All rights reserved.
           </p>
         </div>
       </div>
