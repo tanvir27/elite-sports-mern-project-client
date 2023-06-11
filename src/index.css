@@ -1,0 +1,11 @@
+.website-color {
+  background-color: #02132b; /* Replace #ffffff with your desired background color */
+  margin: 0;
+  padding: 0;
+
+  color: #b0d2ff;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
