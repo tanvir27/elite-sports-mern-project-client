@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 // import SocialLogIn from "../Shared/SocialLogIn/SocialLogIn";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import SocialLogIn from "../Shared/SocialLogIn/SocialLogIn";
 
 const Login = () => {
   const [error, setError] = useState('');
@@ -18,17 +19,17 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleGoogleLogin = (event) => {
-    event.preventDefault();
-    googleLogin()
-      .then(() => {
-        navigate(from, { replace: true });
-        toast.success("Log in Successful");
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
+  // const handleGoogleLogin = (event) => {
+  //   event.preventDefault();
+  //   googleLogin()
+  //     .then(() => {
+  //       navigate(from, { replace: true });
+  //       toast.success("Log in Successful");
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //     });
+  // };
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -57,6 +58,7 @@ const Login = () => {
       <Helmet>
         <title>Elite Sports | Login</title>
       </Helmet>
+     
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col gap-24 md:flex-row-reverse">
           <div className="text-center md:w-1/2 lg:text-left hidden md:block">
@@ -79,7 +81,7 @@ const Login = () => {
                   className="input input-bordered"
                 />
               </div>
-            
+
               <div className="form-control relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -100,6 +102,7 @@ const Login = () => {
                   )}
                 </button>
               </div>
+              <div>{error && <p className="text-red-600">{error}</p>}</div>
 
               <div className="form-control mt-6">
                 <input
@@ -117,18 +120,8 @@ const Login = () => {
                 </Link>{" "}
               </small>
             </p>
-            <div className="">
-              <div className="divider"></div>
-              <div className="text-center w-full my-4">
-                <button
-                  onClick={handleGoogleLogin}
-                  className="btn btn-circle btn-outline text-white "
-                >
-                  <FaGoogle></FaGoogle>
-                </button>
-              </div>
-            </div>
-            {/* <SocialLogIn></SocialLogIn> */}
+
+            <SocialLogIn></SocialLogIn>
           </div>
         </div>
       </div>

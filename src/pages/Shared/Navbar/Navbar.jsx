@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 // import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { toast } from "react-hot-toast";
+import tippy from "tippy.js";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -10,9 +12,24 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
-      .catch((error) => console.log(error));
+      .then(() => {
+        toast.success("Log Out Successfully !");
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
+
+   const buttonRef = useRef(null);
+
+   useEffect(() => {
+     if (user) {
+       tippy(buttonRef.current, {
+         content: user.displayName,
+       });
+     }
+   }, [user]);
 
   const navOptions = (
     <>
@@ -42,6 +59,7 @@ const NavBar = () => {
               className="rounded-full"
               src={user?.photoURL}
               alt="Image not found"
+              ref={buttonRef}
               style={{ height: "38px", width: "40px" }}
             />
           </span>
