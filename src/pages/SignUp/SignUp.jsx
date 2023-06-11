@@ -13,7 +13,7 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
-  
+
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -23,9 +23,7 @@ const SignUp = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
-        .then(() => {
-         
-        })
+        .then(() => {})
         .catch((error) => console.log(error));
     });
   };
@@ -123,11 +121,6 @@ const SignUp = () => {
                     and one special character.
                   </p>
                 )}
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
 
               <div className="form-control">
@@ -151,8 +144,6 @@ const SignUp = () => {
                 {errors.password?.type === "minLength" && (
                   <p className="text-red-600">Password must be 6 characters</p>
                 )}
-              
-              
               </div>
 
               <div className="form-control mt-6">

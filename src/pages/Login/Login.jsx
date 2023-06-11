@@ -3,19 +3,17 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
-import SocialLogIn from "../Shared/SocialLogIn/SocialLogIn";
+// import SocialLogIn from "../Shared/SocialLogIn/SocialLogIn";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
+  const [error, setError] = useState('');
   const { signIn, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
-
   const [showPassword, setShowPassword] = useState(false);
-
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -60,14 +58,12 @@ const Login = () => {
         <title>Elite Sports | Login</title>
       </Helmet>
       <div className="hero min-h-screen ">
-        <div className="hero-content flex-col md:flex-row-reverse">
-          <div className="text-center md:w-1/2 lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+        <div className="hero-content flex-col gap-24 md:flex-row-reverse">
+          <div className="text-center md:w-1/2 lg:text-left hidden md:block">
+            <img
+              src="https://i.ibb.co/56xsWjr/5568706-5568706-removebg-preview.png"
+              alt=""
+            />
           </div>
           <div className="card md:w-1/2 max-w-sm shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
@@ -78,27 +74,18 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="email"
+                  required
+                  placeholder="Enter your Email"
                   className="input input-bordered"
                 />
               </div>
-              {/* <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                />
-                
-              </div> */}
+            
               <div className="form-control relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
-                  placeholder="password"
+                  required
+                  placeholder="Type password "
                   className="input input-bordered pr-12"
                 />
                 <button

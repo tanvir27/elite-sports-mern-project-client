@@ -5,7 +5,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Instructors from "../pages/Instructors/Instructors/Instructors";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login/Login";
-
+import SignUp from "../pages/SignUp/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -29,10 +29,11 @@ export const router = createBrowserRouter([
         path: "login",
         element: <Login></Login>,
       },
-      // {
-      //   path: "signup",
-      //   element: <SignUp></SignUp>,
-      // },
+      {
+        path: "signup",
+        element: <SignUp></SignUp>,
+      },
+  
     ],
   },
 ]);
