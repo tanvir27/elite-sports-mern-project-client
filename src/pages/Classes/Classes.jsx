@@ -33,7 +33,7 @@ const Classes = () => {
               <p className="text-gray-300 text-xl font-serif mb-2">
                 Price: $50
               </p>
-              <button className="btn btn-outline font-serif border-0 border-b-2 letter bg-slate-900 tracking-[3px] text-emerald-100">
+              <button className="btn btn-outline font-serif border-0 border-b-2  bg-slate-900 tracking-[3px] text-emerald-100">
                 Select
               </button>
             </div>

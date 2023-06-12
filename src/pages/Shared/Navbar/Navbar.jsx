@@ -43,7 +43,7 @@ const NavBar = () => {
         <Link to="/classes">Classes</Link>
       </li>
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard/myclass">Dashboard</Link>
       </li>
 
       {user ? (
