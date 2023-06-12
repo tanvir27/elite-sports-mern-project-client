@@ -26,7 +26,7 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full bg-slate-800 py-10">
             {/* Sidebar content here */}
             <li className="">
-              <NavLink to="/dashboard/myclass">
+              <NavLink to="/dashboard/selectedclass">
                 <AiOutlineFundProjectionScreen />
                 My Selected Class
               </NavLink>

@@ -3,17 +3,17 @@ import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { FaTrash, FaAmazonPay } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
-const MyClass = () => {
+const SelectedClass = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Elite Sports | My Class </title>
+        <title>Elite Sports | My Classes </title>
       </Helmet>
       <SectionTitle heading={"My Selected Class"}></SectionTitle>
       <div className="overflow-x-auto w-full bg-slate-800 md:ml-4">
         <table className="table table-zebra w-full ">
           {/* head */}
-          <thead>
+          <thead className="text-center">
             <tr className="bg-gray-700 text-lime-300">
               <th>#</th>
               <th>Class Name</th>
@@ -23,13 +23,13 @@ const MyClass = () => {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-center">
             {/* row 1 */}
             <tr>
               <th>1</th>
               <td>Cy Ganderton</td>
               <td>Quality Control Specialist</td>
-              <td>$ 50</td>
+              <td className="">$ 50</td>
               <td>
                 <button className="btn bg-slate-700 text-white">
                   {" "}
@@ -50,4 +50,4 @@ const MyClass = () => {
   );
 };
 
-export default MyClass;
+export default SelectedClass;
