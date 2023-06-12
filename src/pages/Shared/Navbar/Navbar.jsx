@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import tippy from "tippy.js";
-
+import { FiSun, FiMoon } from "react-icons/fi";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
@@ -107,10 +107,14 @@ const NavBar = () => {
             <Link to="/">EliteSports </Link>
           </h1>
         </div>
-        <div className="navbar-end hidden lg:flex">
+        <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
-        
+        <div className="navbar-end">
+          <button className="btn bg-slate-800 btn-circle hover:bg-slate-700 text-white">
+            <FiSun></FiSun>
+          </button>
+        </div>
       </div>
     </>
   );
