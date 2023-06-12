@@ -12,6 +12,7 @@ import Dashboard from "../Layout/Dashboard";
 import EnrollClasses from "../pages/Dashboard/EnrollClasses/EnrollClasses";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,7 @@ export const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <Dashboard></Dashboard>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "selectedclass",
@@ -61,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: "payment",
         element: <Payment></Payment>,
+      },
+      {
+        path: "history",
+        element: <PaymentHistory></PaymentHistory>,
       },
     ],
   },

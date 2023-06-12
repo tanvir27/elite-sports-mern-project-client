@@ -4,7 +4,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlinePlusCircle,
 } from "react-icons/ai";
-import { MdAssignment, MdPayment } from "react-icons/md";
+import { MdAssignment, MdPayment, MdHistory } from "react-icons/md";
 const Dashboard = () => {
   return (
     <div className="">
@@ -42,6 +42,12 @@ const Dashboard = () => {
               <NavLink to="/dashboard/payment">
                 {" "}
                 <MdPayment /> Payment
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/history">
+                {" "}
+                <MdHistory /> Payment History
               </NavLink>
             </li>
             <div className="divider"></div>
