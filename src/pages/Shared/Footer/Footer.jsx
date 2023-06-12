@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="">
+    <footer className="border-t border-slate-700">
       <div className="container mx-auto py-6 px-4">
         <div className="grid text-center grid-cols-1 md:grid-cols-4 gap-4">
           {/* Column 1 */}
@@ -61,31 +61,19 @@ const Footer = () => {
             <h3 className="text-2xl font-semibold mb-4">Follow Us</h3>
             <p>Join us on social media</p>
             <div className="flex mt-2 justify-center">
-              <Link
-                href="https://www.facebook.com"
-              
-            
-              >
+              <Link href="https://www.facebook.com">
                 <FaFacebook className="text-2xl mr-2" />
               </Link>
-              <Link
-                href="https://www.instagram.com"
-         
-              
-              >
+              <Link href="https://www.instagram.com">
                 <FaInstagram className="text-2xl mr-2" />
               </Link>
-              <Link
-                href="https://www.twitter.com"
-          
-               
-              >
+              <Link href="https://www.twitter.com">
                 <FaTwitter className="text-2xl" />
               </Link>
             </div>
           </div>
         </div>
-        <div className="text-center text-white text-sm mt-4">
+        <div className="text-center text-sm mt-4">
           <p className="font-semibold">
             &copy; Elite Sports Academy 2023. All rights reserved.
           </p>
