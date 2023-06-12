@@ -1,11 +1,15 @@
 import React from "react";
-import SectionTitle from "../SectionTitle/SectionTitle";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { Helmet } from "react-helmet-async";
 
-const PopularClasses = () => {
+const Classes = () => {
   return (
     <div>
-      <SectionTitle heading={"Popular Classes"}></SectionTitle>
+      <Helmet>
+        <title>Elite Sports | Classes </title>
+      </Helmet>
 
+      <SectionTitle heading={"Our Classes"}></SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="w-full p-4">
           <div className="bg-slate-800 rounded-lg shadow-lg overflow-hidden">
@@ -24,7 +28,7 @@ const PopularClasses = () => {
                 Instructor: John Dow
               </p>
               <p className="text-gray-300 font-serif  text-xl mb-2">
-                Available Seats: 250
+                Available Seats: 50
               </p>
               <p className="text-gray-300 text-xl font-serif mb-2">
                 Price: $50
@@ -40,4 +44,4 @@ const PopularClasses = () => {
   );
 };
 
-export default PopularClasses;
+export default Classes;

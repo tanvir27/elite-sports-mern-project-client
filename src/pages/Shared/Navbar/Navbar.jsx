@@ -110,7 +110,7 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end ">
           <button className="btn bg-slate-800 btn-circle hover:bg-slate-700 text-white">
             <FiSun></FiSun>
           </button>
