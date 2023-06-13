@@ -12,7 +12,7 @@ const AddClass = () => {
   return (
     <div className="w-full md:ml-5">
       <Helmet>
-        <title>Elite Sports | Instructors </title>
+        <title>Elite Sports | Add Classes </title>
       </Helmet>
       <SectionTitle heading={"ADD CLASS"}></SectionTitle>
 
