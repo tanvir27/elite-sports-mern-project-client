@@ -14,7 +14,7 @@ const AddClass = () => {
       <Helmet>
         <title>Elite Sports | Add Classes </title>
       </Helmet>
-      <SectionTitle heading={"ADD CLASS"}></SectionTitle>
+      <SectionTitle heading={"ADD - a - CLASS"}></SectionTitle>
 
       {/* form */}
       <div className="flex md:mt-28 justify-center items-center bg-slate-800">
