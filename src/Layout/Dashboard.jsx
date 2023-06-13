@@ -23,7 +23,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-slate-800 py-10">
+          <ul className="menu p-4 w-80  bg-slate-800 py-10 h-full  items-center ">
             {/* Sidebar content here */}
             <li className="">
               <NavLink to="/dashboard/selectedclass">
@@ -59,6 +59,13 @@ const Dashboard = () => {
             </li>
             <li>
               <NavLink to="/instructors">Instructors</NavLink>
+            </li>
+            <div className="divider"></div>
+            <li>
+              <NavLink to="/dashboard/addclass">Add Class</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard/myclass">My Class</NavLink>
             </li>
           </ul>
         </div>

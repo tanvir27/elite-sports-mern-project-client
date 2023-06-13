@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import { FaTrash, FaAmazonPay } from "react-icons/fa";
+import { FaTrash} from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 const SelectedClass = () => {
   return (
@@ -31,15 +31,15 @@ const SelectedClass = () => {
               <td>Quality Control Specialist</td>
               <td className="">$ 50</td>
               <td>
-                <button className="btn bg-slate-700 text-white">
+                <button className="btn bg-slate-700 text-white font-semibold">
                   {" "}
-                  <FaTrash />
+                  <MdPayment />
                 </button>
               </td>
               <td>
                 <button className="btn bg-slate-700 text-white">
                   {" "}
-                  <MdPayment />
+                  <FaTrash />
                 </button>
               </td>
             </tr>
