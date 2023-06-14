@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
+
 const AddClass = () => {
   const { register, handleSubmit } = useForm();
 
@@ -129,6 +130,8 @@ const AddClass = () => {
           </div>
         </form>
       </div>
+
+    
     </div>
   );
 };
