@@ -1,14 +1,8 @@
 .website-color {
-  background-color: #02132b; 
+  background-color: #02132b;
   margin: 0;
   padding: 0;
   color: #b0d2ff;
-}
-.drawer-side a.active {
-  color: rgb(171, 241, 157);
-}
-.drawer a {
- background-color: transparent;
 }
 
 @tailwind base;

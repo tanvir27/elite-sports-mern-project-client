@@ -9,66 +9,87 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { app } from "../firebase/firebase.config";
+import app from "../firebase/firebase.config";
+import axios from "axios";
 
-export const AuthContext = createContext(null);
-
+export const AuthContext = createContext();
 const auth = getAuth(app);
+const countObject = {
+  days: 2,
+  hours: 1,
+  minutes: 30,
+  seconds: 59,
+};
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const signIn = (email, password) => {
+  const logIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  //   google login
-  const provider = new GoogleAuthProvider();
-  const googleLogin = () => {
+  const googleLogIn = () => {
     setLoading(true);
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, googleProvider);
   };
 
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
   };
-
-  const updateUserProfile = (name, photo) => {
+  const profileUpdate = (name, photo) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
     });
   };
-
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("current user", currentUser);
-      setLoading(false);
+      if (currentUser) {
+        axios
+          .post("https://server-site-green.vercel.app/jwt", {
+            email: currentUser.email,
+          })
+          .then((data) => {
+            localStorage.setItem("access-token", data.data.token);
+            setLoading(false);
+          });
+      } else {
+        localStorage.removeItem("access-token");
+      }
     });
     return () => {
-      return unsubscribe();
+      return unSubscribe();
     };
   }, []);
+
+  const setCountFunction = (object) => {
+    (countObject.days = object.days),
+      (countObject.hours = object.hours),
+      (countObject.minutes = object.minutes),
+      (countObject.seconds = object.seconds);
+  };
 
   const authInfo = {
     user,
     loading,
     createUser,
-    signIn,
+    logIn,
+    profileUpdate,
+    googleLogIn,
     logOut,
-    googleLogin,
-    updateUserProfile,
+    setCountFunction,
+    countObject,
   };
-
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

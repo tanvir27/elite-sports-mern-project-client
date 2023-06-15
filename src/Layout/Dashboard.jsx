@@ -1,81 +1,97 @@
-import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import {
-  AiOutlineFundProjectionScreen,
-  AiOutlinePlusCircle,
-} from "react-icons/ai";
-import { MdAssignment, MdPayment, MdHistory } from "react-icons/md";
-const Dashboard = () => {
-  return (
-    <div className="">
-      <div className="drawer lg:drawer-open">
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col  items-center">
-          {/* Page content here */}
+import { FaHome } from "react-icons/fa";
+import { GiConfirmed, GiTeacher, GiWallet } from "react-icons/gi";
+import { SiGoogleclassroom } from "react-icons/si";
+import { MdManageAccounts } from "react-icons/md";
+import { NavLink, Link, Outlet } from "react-router-dom";
+import { BsDatabaseFillAdd } from "react-icons/bs";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
-          <Outlet></Outlet>
-          <label
-            htmlFor="my-drawer-2"
-            className="btn btn-outline my-4 border-0 border-b-2 bg-slate-900 drawer-button lg:hidden"
-          >
-            Open drawer
-          </label>
-        </div>
-        <div className="drawer-side ">
-          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80  bg-slate-800 py-10 h-full  items-center ">
-            {/* Sidebar content here */}
-            <li className="">
-              <NavLink to="/dashboard/selectedclass">
-                <AiOutlineFundProjectionScreen />
-                My Selected Class
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/enrollclass">
-                {" "}
-                <MdAssignment />
-                My Enroll Class
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/payment">
-                {" "}
-                <MdPayment /> Payment
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/history">
-                {" "}
-                <MdHistory /> Payment History
-              </NavLink>
-            </li>
-            <div className="divider"></div>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Classes">Classes</NavLink>
-            </li>
-            <li>
-              <NavLink to="/instructors">Instructors</NavLink>
-            </li>
-            <div className="divider"></div>
-            <li>
-              <NavLink to="/dashboard/addclass">Add Class</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/myclass">My Class</NavLink>
-            </li>
-            <div className="divider"></div>
-            <li>
-              <NavLink to="/dashboard/manageusers">Manage Users</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/manageclasses">Manage Classes</NavLink>
-            </li>
-          </ul>
-        </div>
+const Dashboard = () => {
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
+  return (
+    <div className="drawer lg:drawer-open">
+      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content">
+        <Outlet />
+        {/* Page content here */}
+        <label htmlFor="my-drawer" className="btn btn-primary drawer-button lg:hidden">
+          Open drawer
+        </label>
+      </div>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer" className="drawer-overlay"></label>
+
+        <ul className="menu p-4 text-lg w-80 h-full font-semibold bg-base-200 text-base-content">
+          <NavLink className=" normal-case text-3xl font-bold font-serif mb-5 " to="/">
+            Elite<span className="text-red-600">Sports</span>
+          </NavLink>
+          {/* Sidebar content here */}
+
+          {isAdmin ? (
+            <>
+              <li>
+                <NavLink to="/dashboard/manageclasses">
+                  <SiGoogleclassroom /> Manage Classes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageuser">
+                  <MdManageAccounts /> Manage User
+                </NavLink>
+              </li>
+            </>
+          ) : isInstructor ? (
+            <>
+              <li>
+                <NavLink to="/dashboard/addclass">
+                  <BsDatabaseFillAdd /> Add a Class
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myclasses">
+                  <SiGoogleclassroom /> My Classes
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/dashboard/bookedclasses">
+                  <SiGoogleclassroom /> My Selected Class
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/enrollclass">
+                  <GiConfirmed /> My Enrolled Class
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment-history">
+                  <GiWallet /> Payment History
+                </NavLink>
+              </li>
+            </>
+          )}
+          <div className="divider"></div>
+          <li>
+            <Link to="/">
+              {" "}
+              <FaHome /> Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/instructors">
+              <GiTeacher /> Instructors
+            </Link>
+          </li>
+          <li>
+            <Link to="/classes">
+              <SiGoogleclassroom /> Classes
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

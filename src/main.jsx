@@ -1,21 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./Routes/Routes";
-import Swal from "sweetalert2/dist/sweetalert2.js";
+
+const queryClient = new QueryClient();
+
+import { router } from "./Routes/Router.jsx";
 import AuthProvider from "./providers/AuthProvider";
 import { HelmetProvider } from "react-helmet-async";
-
+// w-[90%] mx-auto 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div className="website-color">
-    <div className="w-[90%] mx-auto ">
+    <div className=" w-[90%] mx-auto ">
       <React.StrictMode>
-        <AuthProvider>
-          <HelmetProvider>
-            <RouterProvider router={router} />
-          </HelmetProvider>
-        </AuthProvider>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <RouterProvider router={router} />
+            </AuthProvider>
+          </QueryClientProvider>
+        </HelmetProvider>
       </React.StrictMode>
     </div>
   </div>

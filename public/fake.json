@@ -1,0 +1,92 @@
+[
+  {
+    "class_name": "Art Exploration",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 15,
+    "enroll_students": 7,
+    "instructor_name": "John Smith",
+    "instructor_email": "john.smith@example.com",
+    "price": 50
+  },
+  {
+    "class_name": "Coding Basics",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 10,
+    "enroll_students": 4,
+    "instructor_name": "Emily Johnson",
+    "instructor_email": "emily.johnson@example.com",
+    "price": 75
+  },
+  {
+    "class_name": "Outdoor Adventures",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 20,
+    "enroll_students": 12,
+    "instructor_name": "David Anderson",
+    "instructor_email": "david.anderson@example.com",
+    "price": 60
+  },
+  {
+    "class_name": "Dance Fusion",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 12,
+    "enroll_students": 8,
+    "instructor_name": "Sophia Lee",
+    "instructor_email": "sophia.lee@example.com",
+    "price": 65
+  },
+  {
+    "class_name": "Sports Mania",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 25,
+    "enroll_students": 18,
+    "instructor_name": "Michael Thompson",
+    "instructor_email": "michael.thompson@example.com",
+    "price": 55
+  },
+  {
+    "class_name": "Science Explorers",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 15,
+    "enroll_students": 10,
+    "instructor_name": "Olivia Davis",
+    "instructor_email": "olivia.davis@example.com",
+    "price": 70
+  },
+  {
+    "class_name": "Cooking Fun",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 8,
+    "enroll_students": 5,
+    "instructor_name": "Daniel Martinez",
+    "instructor_email": "daniel.martinez@example.com",
+    "price": 80
+  },
+  {
+    "class_name": "Music Ensemble",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 20,
+    "enroll_students": 15,
+    "instructor_name": "Ava Clark",
+    "instructor_email": "ava.clark@example.com",
+    "price": 65
+  },
+  {
+    "class_name": "Yoga and Mindfulness",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 12,
+    "enroll_students": 6,
+    "instructor_name": "Benjamin Wright",
+    "instructor_email": "benjamin.wright@example.com",
+    "price": 55
+  },
+  {
+    "class_name": "Theater Workshop",
+    "image": "https://img.freepik.com/free-photo/wooden-art-pieces-painting-process_23-2148271008.jpg?size=626&ext=jpg&ga=GA1.2.1346969389.1672858153&semt=ais",
+    "available_seats": 15,
+    "enroll_students": 9,
+    "instructor_name": "Mia Brown",
+    "instructor_email": "mia.brown@example.com",
+    "price": 70
+  }
+]
