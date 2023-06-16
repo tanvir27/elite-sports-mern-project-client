@@ -1,9 +1,9 @@
-import { FaHistory, FaHome } from "react-icons/fa";
-import { GiConfirmed, GiTeacher, GiWallet } from "react-icons/gi";
+import { FaAddressBook, FaChalkboardTeacher, FaHistory, FaHome, FaTachometerAlt, FaUser } from "react-icons/fa";
+
 import { SiGoogleclassroom } from "react-icons/si";
-import { MdManageAccounts, MdPeople } from "react-icons/md";
+import {  MdAssignmentAdd, MdPeople } from "react-icons/md";
 import { NavLink, Link, Outlet } from "react-router-dom";
-import { BsDatabaseFillAdd } from "react-icons/bs";
+
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/manageuser">
-                  <MdManageAccounts /> Manage User
+                  <FaUser /> Manage User
                 </NavLink>
               </li>
             </>
@@ -52,12 +52,12 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/addclass">
-                  <BsDatabaseFillAdd /> Add a Class
+                  <FaAddressBook /> Add a Class
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/myclasses">
-                  <SiGoogleclassroom /> My Classes
+                  <MdAssignmentAdd /> My Classes
                 </NavLink>
               </li>
             </>
@@ -89,7 +89,7 @@ const Dashboard = () => {
           </li>
           <li>
             <Link to="/instructors">
-              <GiTeacher /> Instructors
+              <FaChalkboardTeacher /> Instructors
             </Link>
           </li>
           <li>
