@@ -19,6 +19,7 @@ const PaymentHistory = () => {
       <Helmet>
         <title>Payment History | Elite Sports </title>
       </Helmet>
+
       <div className="overflow-x-auto bg-slate-800 p-5 my-20 mx-10 rounded-lg shadow-xl">
         <table className="table ">
           <thead>

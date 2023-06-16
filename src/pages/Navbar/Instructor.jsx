@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import useInstructors from "../../hooks/useInstructors";
+import SectionTitle from "../../hooks/SectionTitle";
 
 const Instructor = () => {
   const instructors = useInstructors();
@@ -10,6 +11,7 @@ const Instructor = () => {
       <Helmet>
         <title>Instructors | Elite Sports</title>
       </Helmet>
+      <SectionTitle heading={"Instructors"}></SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:my-20">
         {instructors.map((data) => (
           <div
@@ -27,7 +29,9 @@ const Instructor = () => {
               <h2 className="text-2xl mx-auto text-center  font-semibold font-serif">
                 Name: {data?.name}
               </h2>
-              <p className="font-semibold text-center font-serif">Email: {data?.email} </p>
+              <p className="font-semibold text-center font-serif">
+                Email: {data?.email}{" "}
+              </p>
             </div>
           </div>
         ))}

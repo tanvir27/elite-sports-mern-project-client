@@ -1,7 +1,7 @@
-import { FaHome } from "react-icons/fa";
+import { FaHistory, FaHome } from "react-icons/fa";
 import { GiConfirmed, GiTeacher, GiWallet } from "react-icons/gi";
 import { SiGoogleclassroom } from "react-icons/si";
-import { MdManageAccounts } from "react-icons/md";
+import { MdManageAccounts, MdPeople } from "react-icons/md";
 import { NavLink, Link, Outlet } from "react-router-dom";
 import { BsDatabaseFillAdd } from "react-icons/bs";
 import useAdmin from "../hooks/useAdmin";
@@ -16,7 +16,10 @@ const Dashboard = () => {
       <div className="drawer-content">
         <Outlet />
         {/* Page content here */}
-        <label htmlFor="my-drawer" className="btn btn-primary drawer-button lg:hidden">
+        <label
+          htmlFor="my-drawer"
+          className="btn btn-primary drawer-button lg:hidden"
+        >
           Open drawer
         </label>
       </div>
@@ -24,7 +27,10 @@ const Dashboard = () => {
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
 
         <ul className="menu p-4 text-lg w-80 h-full font-semibold bg-base-200 text-base-content">
-          <NavLink className=" normal-case text-3xl font-bold font-serif mb-5 " to="/">
+          <NavLink
+            className=" normal-case text-3xl font-bold font-serif mb-5 "
+            to="/"
+          >
             Elite<span className="text-red-600">Sports</span>
           </NavLink>
           {/* Sidebar content here */}
@@ -64,12 +70,12 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/enrollclass">
-                  <GiConfirmed /> My Enrolled Class
+                  <MdPeople /> My Enrolled Class
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/payment-history">
-                  <GiWallet /> Payment History
+                  <FaHistory /> Payment History
                 </NavLink>
               </li>
             </>

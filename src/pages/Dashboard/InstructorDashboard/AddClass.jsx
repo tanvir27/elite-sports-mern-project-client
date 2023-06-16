@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../../providers/AuthProvider";
+import SectionTitle from "../../../hooks/SectionTitle";
 
 const image_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 
@@ -60,7 +61,7 @@ const AddClass = () => {
         onSubmit={handleSubmit(onSubmit)}
         className=" border  p-5 rounded space-y-3 shadow"
       >
-        <h3 className="text-center text-3xl font-semibold"> Add a Class</h3>
+        <SectionTitle heading={"Add a Class"}></SectionTitle>
         <div className="form-control text-black">
           <label className="label">
             <span className="label-text text-white">Class Name*</span>

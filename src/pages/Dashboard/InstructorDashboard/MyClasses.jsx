@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SectionTitle from "../../../hooks/SectionTitle";
 
 const MyClasses = () => {
   const { user } = useContext(AuthContext);
@@ -20,6 +21,7 @@ const MyClasses = () => {
       <Helmet>
         <title> My Classes | Elite Sports </title>
       </Helmet>
+      <SectionTitle heading={"My Classes"}></SectionTitle>
 
       <div className="overflow-x-auto bg-slate-700 p-5 mb-10 rounded-lg shadow-xl">
         <table className="table table-md table-pin-rows table-pin-cols ">

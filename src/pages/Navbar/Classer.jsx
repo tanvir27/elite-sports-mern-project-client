@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { AuthContext } from "../../providers/AuthProvider";
 import useInstructor from "../../hooks/useInstructor";
+import SectionTitle from "../../hooks/SectionTitle";
 
 const Classer = () => {
   const { user } = useContext(AuthContext);
@@ -71,6 +72,7 @@ const Classer = () => {
       <Helmet>
         <title> Classes | Elite Sports</title>
       </Helmet>
+      <SectionTitle heading={"All Classes"}></SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
         {classes.map((data) => (
           <div

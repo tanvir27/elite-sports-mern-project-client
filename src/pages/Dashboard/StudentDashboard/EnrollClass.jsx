@@ -19,6 +19,7 @@ const EnrollClasses = () => {
       <Helmet>
         <title>Enroll Classes | Elite Sports</title>
       </Helmet>
+
       <div className="overflow-x-auto bg-slate-800 p-5 my-20 rounded-lg shadow-xl">
         <table className="table table-md table-pin-rows table-pin-cols ">
           <thead>

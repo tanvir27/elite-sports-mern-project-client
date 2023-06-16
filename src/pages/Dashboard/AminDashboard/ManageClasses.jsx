@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import SectionTitle from "../../../hooks/SectionTitle";
 
 const ManageClasses = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -43,6 +44,7 @@ const ManageClasses = () => {
       <Helmet>
         <title> Manage Classes | Elite Sports</title>
       </Helmet>
+      <SectionTitle heading={"- manage classes -"}></SectionTitle>
       <div className="overflow-x-auto mx-10 bg-slate-200 text-black py-10 rounded-lg shadow-2xl">
         <table className="table">
           {/* head */}
