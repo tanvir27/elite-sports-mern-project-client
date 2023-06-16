@@ -97,7 +97,7 @@ const Navbar = () => {
             <>
               <li>
                 <Link
-                  className="btn btn-outline bg-slate-600 me-2"
+                  className="btn  bg-slate-800 text-white  border-0 me-2"
                   onClick={logOut}
                   to="/login"
                 >
